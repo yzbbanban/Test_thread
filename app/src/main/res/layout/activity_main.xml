@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.wangban.yzbbanban.test_thread.MainActivity">
+    <!-- 下载路径提示文字 -->
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="下载文件" />
+    <!-- 下载路径输入框，此处为了方便测试，我们设置了默认的路径，可以根据需要在用户界面处修改 -->
+    <EditText
+        android:id="@+id/path"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="http://yinyueshiting.baidu.com/data2/music/efe72fd4d1ee537ba1d5e7fcaa334a01/267323369/267323369.mp3?xcode=91ad98ca9596c101ed47f60d337fa3fd" />
+    <!-- 水平LinearLayout布局，包裹下载按钮和暂停按钮 -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- 下载按钮，用于触发下载事件 -->
+        <Button
+            android:id="@+id/downloadbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下载" />
+        <!-- 暂停按钮，在初始状态下为不可用 -->
+        <Button
+            android:id="@+id/stopbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="暂停" />
+    </LinearLayout>
+
+
+    <!-- 水平进度条，用图形化的方式实时显示进步信息 -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="18dp" />
+    <!-- 文本框，用于显示实时下载的百分比 -->
+    <TextView
+        android:id="@+id/resultView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+
+
+</LinearLayout>
