@@ -73,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.downloadbutton: // 开始下载
                     // http://abv.cn/music/光辉岁月.mp3，可以换成其他文件下载的链接
 //                    http://yinyueshiting.baidu.com/data2/music/efe72fd4d1ee537ba1d5e7fcaa334a01/267323369/267323369.mp3?xcode=91ad98ca9596c101ed47f60d337fa3fd
-                    String path = pathText.getText().toString();
+                    String url = " http://zhangmenshiting.baidu.com/data2/music/920aa7b5fb5a1fcd5f698dce859ef7d4/267604271/267604271.mp3?xcode=d139a1c65c8eeb81e23725bcf113dbcd";
+//                    String path = pathText.getText().toString();
+                    String path = url;
 //                    String filename = path.substring(path.lastIndexOf('/') +1,path.indexOf("?"));
 //                    String filename = path.substring(path.lastIndexOf('/') +1);
 
@@ -128,10 +130,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         /**
-         *
          * UI控件画面的重绘(更新)是由主线程负责处理的，如果在子线程中更新UI控件的值，更新后的值不会重绘到屏幕上
          * 一定要在主线程里更新UI控件的值，这样才能在屏幕上显示出来，不能在子线程中更新UI控件的值
-         *
          */
         private final class DownloadTask implements Runnable {
             private String path;
